@@ -51,19 +51,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Features\SpecFlowFeature1.feature.cs">
+    <Compile Include="Features\HelloScreenFeature.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SpecFlowFeature1.feature</DependentUpon>
+      <DependentUpon>HelloScreenFeature.feature</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Steps\StepDefinition1.cs" />
+    <Compile Include="Steps\HelloScreenStepDefinition.cs" />
+    <Compile Include="Utils\ServiceInvokerFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Features\SpecFlowFeature1.feature">
+    <None Include="Features\HelloScreenFeature.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>SpecFlowFeature1.feature.cs</LastGenOutput>
+      <LastGenOutput>HelloScreenFeature.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
@@ -71,6 +72,10 @@
     <ProjectReference Include="..\EPD.SpecApp.Client\EPD.SpecApp.Client.csproj">
       <Project>{f8cac525-3b4b-4777-bb46-52d2adbad1e6}</Project>
       <Name>EPD.SpecApp.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EPD.SpecApp.Services\EPD.SpecApp.Services.csproj">
+      <Project>{9f99b21b-424a-4787-b27f-ed0e6dd9d291}</Project>
+      <Name>EPD.SpecApp.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

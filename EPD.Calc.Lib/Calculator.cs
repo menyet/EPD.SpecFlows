@@ -28,7 +28,7 @@ namespace EPD.Calc.Lib
 
         public void Subtract()
         {
-            Result = _numbers[1] + _numbers[0];
+            Result = _numbers[1] - _numbers[0];
         }
     }
 }

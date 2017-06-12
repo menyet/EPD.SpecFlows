@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26206.0
+VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EPD.SpecApp.SpecFlows", "EPD.SpecApp.SpecFlows\EPD.SpecApp.SpecFlows.csproj", "{7226C2D9-9906-41AE-993A-B0658FFBC942}"
 EndProject
@@ -16,6 +16,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EPD.SpecApp.Services", "EPD.SpecApp.Services\EPD.SpecApp.Services.csproj", "{9F99B21B-424A-4787-B27F-ED0E6DD9D291}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EPD.SpecApp.Services.Host", "EPD.SpecApp.Services.Host\EPD.SpecApp.Services.Host.csproj", "{4C178558-856E-46C6-932E-78DF105A1325}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ClientServerApp", "ClientServerApp", "{F26958F7-B459-4E30-A2E0-33B5DAFF3441}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,7 +54,11 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{7226C2D9-9906-41AE-993A-B0658FFBC942} = {F26958F7-B459-4E30-A2E0-33B5DAFF3441}
+		{F8CAC525-3B4B-4777-BB46-52D2ADBAD1E6} = {F26958F7-B459-4E30-A2E0-33B5DAFF3441}
 		{6777FC6C-1193-4019-A53A-71B680CB21D5} = {5412C6FF-3875-4645-AF3F-07A2D372FE6C}
 		{57DBC5D6-36E7-47AF-BC81-E598B8A3D850} = {5412C6FF-3875-4645-AF3F-07A2D372FE6C}
+		{9F99B21B-424A-4787-B27F-ED0E6DD9D291} = {F26958F7-B459-4E30-A2E0-33B5DAFF3441}
+		{4C178558-856E-46C6-932E-78DF105A1325} = {F26958F7-B459-4E30-A2E0-33B5DAFF3441}
 	EndGlobalSection
 EndGlobal

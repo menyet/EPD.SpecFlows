@@ -5,12 +5,12 @@ using TechTalk.SpecFlow;
 namespace EPD.Calc.SpecFlows
 {
     [Binding]
-    public sealed class StepDefinition1
+    public sealed class CalcStepDefinition
     {
         private ScenarioContext _scenarioContext;
         private readonly Calculator _calc;
 
-        public StepDefinition1(ScenarioContext scenarioContext)
+        public CalcStepDefinition(ScenarioContext scenarioContext)
         {
             _scenarioContext = scenarioContext;
 

@@ -1,4 +1,4 @@
-﻿namespace EPD.SpecApp.Services.Host
+﻿namespace EPD.SpecApp.Services
 {
     public class HelloWorldService : IHelloWorldService
     {
