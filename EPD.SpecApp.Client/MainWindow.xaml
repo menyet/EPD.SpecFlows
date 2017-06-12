@@ -3,10 +3,18 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:EPD.SpecApp.Client"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        xmlns:viewModels="clr-namespace:EPD.SpecApp.Client.ViewModels"
+        Title="MainWindow"
+        Width="525"
+        Height="350"
+        d:DataContext="{d:DesignInstance viewModels:MainViewModel,
+                                         d:IsDesignTimeCreatable=False}"
+        mc:Ignorable="d">
     <Grid>
-        
+
+        <TabControl DisplayMemberPath="asd"
+                    ItemsSource="{Binding ViewModels}"
+                    SelectedValue="{Binding SelectedTabViewModel}" />
+
     </Grid>
 </Window>

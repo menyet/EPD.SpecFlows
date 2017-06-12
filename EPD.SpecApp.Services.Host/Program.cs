@@ -1,56 +1,83 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.ServiceModel;
-using System.ServiceModel.Description;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EPD.SpecApp.Services.Host
 {
     class Program
     {
-        [ServiceContract]
-        public interface IHelloWorldService
-        {
-            [OperationContract]
-            string SayHello(string name);
-        }
-
-        public class HelloWorldService : IHelloWorldService
-        {
-            public string SayHello(string name)
-            {
-                return string.Format("Hello, {0}", name);
-            }
-        }
+        
 
         static void Main(string[] args)
         {
-            Uri baseAddress = new Uri("http://localhost:8080/hello");
+            //ServiceHost hostDefault = new
+            //    ServiceHost(typeof(HelloWorldService));
 
-            // Create the ServiceHost.
-            using (ServiceHost host = new ServiceHost(typeof(HelloWorldService), baseAddress))
+            //TimeSpan closeTimeout = hostDefault.CloseTimeout;
+
+            //TimeSpan openTimeout = hostDefault.OpenTimeout;
+
+
+            //ServiceAuthorizationBehavior authorization =
+            //    hostDefault.Authorization;
+
+            //ServiceCredentials credentials =
+            //    hostDefault.Credentials;
+
+            //ServiceDescription description =
+            //    hostDefault.Description;
+
+
+            //int manualFlowControlLimit =
+            //    hostDefault.ManualFlowControlLimit;
+
+
+            NetTcpBinding portsharingBinding = new NetTcpBinding()
             {
-                // Enable metadata publishing.
-                ServiceMetadataBehavior smb = new ServiceMetadataBehavior();
-                smb.HttpGetEnabled = true;
-                smb.MetadataExporter.PolicyVersion = PolicyVersion.Policy15;
-                host.Description.Behaviors.Add(smb);
+                Security = { Mode = SecurityMode.None },
+                CloseTimeout = TimeSpan.FromMinutes(10),
+                OpenTimeout = TimeSpan.FromMinutes(10),
+                ReceiveTimeout = TimeSpan.FromMinutes(10),
+                SendTimeout = TimeSpan.FromMinutes(10)
+            };
+            //hostDefault.AddServiceEndpoint(
+            //    typeof(IHelloWorldService),
+            //    portsharingBinding,
+            //    "net.tcp://localhost/MyService");
 
-                // Open the ServiceHost to start listening for messages. Since
-                // no endpoints are explicitly configured, the runtime will create
-                // one endpoint per base address for each service contract implemented
-                // by the service.
-                host.Open();
 
-                Console.WriteLine("The service is ready at {0}", baseAddress);
-                Console.WriteLine("Press <Enter> to stop the service.");
-                Console.ReadLine();
+            //int newLimit = hostDefault.IncrementManualFlowControlLimit(100);
 
-                // Close the ServiceHost.
-                host.Close();
+            using (ServiceHost serviceHost = new ServiceHost(typeof(HelloWorldService)))
+            {
+                try
+                {
+                    serviceHost.AddServiceEndpoint(
+                        typeof(IHelloWorldService),
+                        portsharingBinding,
+                        "net.tcp://localhost:6339/MyService");
+
+                    // Open the ServiceHost to start listening for messages.
+                    serviceHost.Open();
+                    // The service can now be accessed.
+                    Console.WriteLine("The service is ready.");
+                    Console.WriteLine("Press <ENTER> to terminate service.");
+                    Console.ReadLine();
+
+                    // Close the ServiceHost.
+                    serviceHost.Close();
+                }
+                catch (TimeoutException timeProblem)
+                {
+                    Console.WriteLine(timeProblem.Message);
+                    Console.ReadLine();
+                }
+                catch (CommunicationException commProblem)
+                {
+                    Console.WriteLine(commProblem.Message);
+                    Console.ReadLine();
+                }
             }
+
         }
     }
 }

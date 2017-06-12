@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ServiceModel;
 
 namespace EPD.SpecApp.Services
 {
-    public class Class1
+    [ServiceContract]
+    public interface IHelloWorldService
     {
+        [OperationContract]
+        string SayHello(string name);
     }
 }
