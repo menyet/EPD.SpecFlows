@@ -12,7 +12,7 @@
         mc:Ignorable="d">
     <Grid>
 
-        <TabControl DisplayMemberPath="asd"
+        <TabControl DisplayMemberPath="Title"
                     ItemsSource="{Binding ViewModels}"
                     SelectedValue="{Binding SelectedTabViewModel}" />
 

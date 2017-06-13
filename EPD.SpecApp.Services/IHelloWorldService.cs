@@ -7,5 +7,11 @@ namespace EPD.SpecApp.Services
     {
         [OperationContract]
         string SayHello(string name);
+
+        [OperationContract]
+        Person[] GetPersons();
+
+        [OperationContract]
+        void AddPerson(Person person);
     }
 }
