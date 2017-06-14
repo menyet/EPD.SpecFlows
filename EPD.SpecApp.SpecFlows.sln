@@ -1,13 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26206.0
+VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EPD.SpecApp.SpecFlows", "EPD.SpecApp.SpecFlows\EPD.SpecApp.SpecFlows.csproj", "{7226C2D9-9906-41AE-993A-B0658FFBC942}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EPD.SpecApp.Client", "EPD.SpecApp.Client\EPD.SpecApp.Client.csproj", "{F8CAC525-3B4B-4777-BB46-52D2ADBAD1E6}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EPD.Calc.SpecFlows", "EPD.Calc.SpecFlows\EPD.Calc.SpecFlows.csproj", "{6777FC6C-1193-4019-A53A-71B680CB21D5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EPD.Calc.Lib", "EPD.Calc.Lib\EPD.Calc.Lib.csproj", "{57DBC5D6-36E7-47AF-BC81-E598B8A3D850}"
 EndProject
@@ -23,18 +19,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7226C2D9-9906-41AE-993A-B0658FFBC942}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7226C2D9-9906-41AE-993A-B0658FFBC942}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7226C2D9-9906-41AE-993A-B0658FFBC942}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7226C2D9-9906-41AE-993A-B0658FFBC942}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F8CAC525-3B4B-4777-BB46-52D2ADBAD1E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F8CAC525-3B4B-4777-BB46-52D2ADBAD1E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8CAC525-3B4B-4777-BB46-52D2ADBAD1E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8CAC525-3B4B-4777-BB46-52D2ADBAD1E6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6777FC6C-1193-4019-A53A-71B680CB21D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6777FC6C-1193-4019-A53A-71B680CB21D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6777FC6C-1193-4019-A53A-71B680CB21D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6777FC6C-1193-4019-A53A-71B680CB21D5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{57DBC5D6-36E7-47AF-BC81-E598B8A3D850}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{57DBC5D6-36E7-47AF-BC81-E598B8A3D850}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57DBC5D6-36E7-47AF-BC81-E598B8A3D850}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -52,7 +40,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{6777FC6C-1193-4019-A53A-71B680CB21D5} = {5412C6FF-3875-4645-AF3F-07A2D372FE6C}
 		{57DBC5D6-36E7-47AF-BC81-E598B8A3D850} = {5412C6FF-3875-4645-AF3F-07A2D372FE6C}
 	EndGlobalSection
 EndGlobal
