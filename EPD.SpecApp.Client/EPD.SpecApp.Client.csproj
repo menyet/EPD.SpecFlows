@@ -72,8 +72,14 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Bootstrap.cs" />
+    <Compile Include="Utils\IServiceInvoker.cs" />
+    <Compile Include="Utils\IServiceInvokerFactory.cs" />
     <Compile Include="Utils\ServiceInvoker.cs" />
+    <Compile Include="Utils\ServiceInvokerFactory.cs" />
+    <Compile Include="ViewModels\HelloViewModel.cs" />
+    <Compile Include="ViewModels\ITabViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\TableViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

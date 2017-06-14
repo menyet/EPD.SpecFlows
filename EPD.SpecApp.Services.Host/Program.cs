@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Linq;
 using System.ServiceModel;
 
 namespace EPD.SpecApp.Services.Host
 {
     class Program
     {
-        
+
 
         static void Main(string[] args)
         {
@@ -33,7 +34,7 @@ namespace EPD.SpecApp.Services.Host
 
             NetTcpBinding portsharingBinding = new NetTcpBinding()
             {
-                Security = { Mode = SecurityMode.None },
+                Security = {Mode = SecurityMode.None},
                 CloseTimeout = TimeSpan.FromMinutes(10),
                 OpenTimeout = TimeSpan.FromMinutes(10),
                 ReceiveTimeout = TimeSpan.FromMinutes(10),
@@ -45,7 +46,28 @@ namespace EPD.SpecApp.Services.Host
             //    "net.tcp://localhost/MyService");
 
 
-            //int newLimit = hostDefault.IncrementManualFlowControlLimit(100);
+            var a = new[]
+            {
+                "Clifton Holden",
+                "Jimmy Lara",
+                "Eric Willis",
+                "Nelson Huffman",
+                "Marc McCullough",
+                "Bob Larsen",
+                "Stephen Henderson",
+                "Jimmy Goodman",
+                "Fernando Love",
+                "Logan Huff"
+            };
+
+            var p = a.Select(n => new Person { Name = n, Weight = (n.Length - 5) * 10 + n.Length % 9 });
+
+            foreach (var person in p)
+            {
+                Database.Instance.Persons.Add(person);
+            }
+
+           //int newLimit = hostDefault.IncrementManualFlowControlLimit(100);
 
             using (ServiceHost serviceHost = new ServiceHost(typeof(HelloWorldService)))
             {
@@ -55,7 +77,7 @@ namespace EPD.SpecApp.Services.Host
                         typeof(IHelloWorldService),
                         portsharingBinding,
                         "net.tcp://localhost:6339/MyService");
-
+                    
                     // Open the ServiceHost to start listening for messages.
                     serviceHost.Open();
                     // The service can now be accessed.
@@ -77,7 +99,6 @@ namespace EPD.SpecApp.Services.Host
                     Console.ReadLine();
                 }
             }
-
         }
     }
 }

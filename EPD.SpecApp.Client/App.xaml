@@ -1,16 +1,44 @@
 ﻿<Application x:Class="EPD.SpecApp.Client.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:services="clr-namespace:EPD.SpecApp.Services;assembly=EPD.SpecApp.Services"
              xmlns:vm="clr-namespace:EPD.SpecApp.Client.ViewModels"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
 
 
-        <DataTemplate DataType="{x:Type vm:TableViewModel}">
+        <DataTemplate DataType="{x:Type vm:HelloViewModel}">
             <StackPanel>
                 <TextBox Text="{Binding Name}" />
 
                 <TextBox IsReadOnly="True" Text="{Binding Text, Mode=OneWay}" />
+            </StackPanel>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:TableViewModel}">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock>Name</TextBlock>
+                    <TextBox Text="{Binding Name}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock>Weight</TextBlock>
+                    <TextBox Text="{Binding Weight}" />
+                </StackPanel>
+
+                <Button Command="{Binding AddCommand}" Content="Add" />
+
+
+                <ItemsControl ItemsSource="{Binding Persons}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate DataType="{x:Type services:Person}">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Width=" 300" Text="{Binding Name}" />
+                                <TextBlock Width=" 300" Text="{Binding Weight}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
             </StackPanel>
         </DataTemplate>
 
